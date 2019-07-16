@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validation Form</title>
+	<style>
+	h1{
+		text-align: center;
+		margin: 0;
+		padding: 0 0 20px;
+		font-size: 22px;
+
+	}
+	body{
+		margin: 0;
+		padding: 0;
+		background: url(bg1.jpg);
+		background-size: 2500px 1500px;
+		background-position: center;
+		font-family: sans-serif;
+	}
+	.ValidationForm{
+		width: 320px;
+		height: 520px;
+		background: #000;
+		color: #fff;
+		top: 50%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		box-sizing: border-box;
+		padding: 70px 30px;
+	}
+	.icon1{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		position: absolute;
+		top: -50px;
+		left: calc(50% - 50px); 
+	}
+	.ValidationForm p{
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	.ValidationForm input{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.ValidationForm input[type="text"]{
+		border: none;
+		border-bottom: 1px solid #fff;
+		background: transparent;
+		outline: none;
+		height: 40px;
+		color: #fff;
+		font-size: 14px;
+	}
+	.ValidationForm input[type="submit"]
+	{
+		border: none;
+		outline: none;
+		height: 40px;
+		background: #AF1E23;
+		color: #fff;
+		font-size: 18px;
+		border-radius: 20px;
+	}
+	.ValidationForm input[type="submit"]:hover
+	{
+		cursor: pointer;
+		background: #ffc107;
+		color: #000;
+	}
+	
+
+	</style>
+		<script type="text/javascript">
+		function validate()
+		{
+			if(document.validateForm.FName.value == "")
+			{
+				alert("Please Enter your First Name");
+				document.validateForm.FName.focus();
+				return false;
+			}
+			if(document.validateForm.LName.value == "")
+			{
+				alert("Please Enter your Last Name");
+				document.validateForm.LName.focus();
+				return false;
+			}
+			if(document.validateForm.Age.value == "")
+			{
+				alert("Please Enter your Age");
+				document.validateForm.Age.focus();
+				return false;
+			}
+			if(document.validateForm.Age.value <= "17")
+			{
+				alert("Sorry! Only for 17+ users");
+				document.validateForm.Age.focus();
+				return false;
+			}
+			if(document.validateForm.Weight.value == "")
+			{
+				alert("Please Enter your Weight");
+				document.validateForm.Weight.focus();
+				return false;
+			}
+			if(document.validateForm.Weight.value <= "80" && document.validateForm.Weight.value >= "300")
+			{
+				alert("Sorry! Your Weight is out of required range (80-300)");
+				document.validateForm.Weight.focus();
+				return false;
+			}
+		return(true);
+		}
+	</script>
+</head>
+<body>
+	<div class="ValidationForm">
+		<img src="icon1.jpg" class="icon1">
+		<h1>Validation Form</h1>
+
+<form action="" name="validateForm" onsubmit="return(validate());">
+	<p>First Name</p>
+	<input type="text" name="FName" placeholder="Enter First Name">
+	<p>Last Name</p>
+	<input type="text" name="LName" placeholder="Enter Last Name">
+	<p>Age</p>
+	<input type="text" name="Age" placeholder="Enter Age">
+	<p>Weight</p>
+	<input type="text" name="Weight" placeholder="Enter Weight (In lb)">
+	<input type="submit" value="Submit">
+</form>
+    </div>
+</body>
+</html>

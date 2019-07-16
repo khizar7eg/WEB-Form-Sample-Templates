@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Shipment Form</title>
+	<style>
+	h1{
+		text-align: center;
+		margin: 0;
+		padding: 0 0 0px;
+		font-size: 20px;
+
+	}
+	body{
+		margin: 0;
+		padding: 0;
+		background: url(bg2.jpg);
+		background-size: cover;
+		background-position: all;
+		font-family: sans-serif;
+	}
+	.ValidationForm{
+		width: 420px;
+		height: 580px;
+		background: #16303F;
+		color: #fff;
+		top: 53%;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%,-50%);
+		box-sizing: border-box;
+		padding: 70px 30px;
+	}
+	.icon2{
+		width: 100px;
+		height: 100px;
+		border-radius: 50%;
+		position: absolute;
+		top: -50px;
+		left: calc(50% - 50px); 
+	}
+	.ValidationForm p{
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+		font-size: 16px;
+	}
+	.ValidationForm input{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.ValidationForm input[type="text"]{
+		border: none;
+		border-bottom: 1px solid #fff;
+		background: transparent;
+		outline: none;
+		height: 40px;
+		color: #fff;
+		font-size: 14px;
+	}
+	.ValidationForm input[type="submit"]
+	{
+		border: none;
+		outline: none;
+		height: 40px;
+		background: #5297FF;
+		color: #fff;
+		font-size: 18px;
+		border-radius: 20px;
+	}
+	.ValidationForm input[type="submit"]:hover
+	{
+		cursor: pointer;
+		background: #ffc107;
+		color: #000;
+	}
+
+	input:required:invalid, input:focus:invalid {
+    background-image: url(star.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+    -moz-box-shadow: none;
+  }
+  input:required:valid {
+    background-image: url(ok.png);
+    background-position: right top;
+    background-repeat: no-repeat;
+  }
+	
+
+	</style>
+		<script type="text/javascript">
+		function validate()
+		{
+			if(document.validateForm.Name.value == "")
+			{
+				alert("Please Enter your Complete Name");
+				document.validateForm.Name.focus();
+				return false;
+			}
+			if(document.validateForm.Contact.value == "")
+			{
+				alert("Please Enter your Contact Number");
+				document.validateForm.Contact.focus();
+				return false;
+			}
+			if(document.validateForm.Email.value != "")
+			{
+				
+			
+		var emailID = document.validateForm.Email.value;
+         atpos = emailID.indexOf("@");
+         dotpos = emailID.lastIndexOf(".");
+         if (atpos < 1 || ( dotpos - atpos < 2 )) 
+         {
+            alert("Please enter correct Email ID")
+            document.validateForm.Email.focus() ;
+            return false;
+
+			}
+		    }
+			if(document.validateForm.Order.value == "")
+			{
+				alert("Please Enter your Order ID");
+				document.validateForm.Order.focus();
+				return false;
+			}
+			if(document.validateForm.Order.value.length != "5")
+			{
+				alert("Please Enter your 5 Digit Order ID");
+				document.validateForm.Order.focus();
+				return false;
+			}
+			if(document.validateForm.Adress.value == "")
+			{
+				alert("Please Enter Shipping Adress");
+				document.validateForm.Adress.focus();
+				return false;
+			}
+		return(true);
+		}
+	</script>
+</head>
+<body>
+	<div class="ValidationForm">
+		<img src="icon2.png" class="icon2">
+		<h1>Order Form</h1>
+
+<form action="" name="validateForm" onsubmit="return(validate());">
+	<p>Name</p>
+	<input type="text" name="Name" required="" placeholder="Enter Complete Name" pattern="^[A-Za-z -]{2,}" title="Enter your Complete Name">
+	<p>Contact</p>
+	<input type="text" name="Contact" required="" placeholder="Enter Contact Number" pattern="[0-9]{11}" title="Enter your 11 Digit Contact Number">
+	<p>Email</p>
+	<input type="text" name="Email" placeholder="Enter Email (Optional)" title="Enter your Valid Email">
+	<p>Order ID</p>
+	<input type="text" name="Order" required="" placeholder="Enter Order ID"  pattern="[A-Za-z0-9]{5}" title="Enter your 5 Digit Order ID">
+	<p>Adress</p>
+	<input type="text" name="Adress" required=""  placeholder="Enter Shipping Adress" pattern="^[A-Za-z0-9 -,/.]{10,}" title="Enter your Shipping Adress">
+	
+	
+	<input type="submit" value="Order">
+</form>
+    </div>
+</body>
+</html>

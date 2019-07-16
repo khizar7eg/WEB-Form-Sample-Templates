@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bootstrap Form</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<style type="text/css">
+	.info{
+		font-size: 12px;
+		width: 350px;
+		position: absolute;
+		left: 545px;
+		top: 225px;
+	}
+
+	hr.colored{
+		border: 0;   
+  height: 5px;
+  border-radius: 2px;
+  background: -webkit-linear-gradient(left, rgba(196,222,138,1) 0%, rgba(196,222,138,1) 12.5%, rgba(245,253,212,1) 12.5%, rgba(245,253,212,1) 25%, rgba(255,208,132,1) 25%, rgba(255,208,132,1) 37.5%, rgba(242,122,107,1) 37.5%, rgba(242,122,107,1) 50%, rgba(223,157,185,1) 50%, rgba(223,157,185,1) 62.5%, rgba(192,156,221,1) 62.5%, rgba(192,156,221,1) 75%, rgba(95,156,217,1) 75%, rgba(95,156,217,1) 87.5%, rgba(94,190,227,1) 87.5%, rgba(94,190,227,1) 87.5%, rgba(94,190,227,1) 100%);
+
+	}
+
+	.line{
+		width: 420px;
+	}
+
+	form{
+		align-content: center;
+		padding-left: 450px;
+	}
+
+</style>
+</head>
+<body>
+
+<form>
+<div class="container">
+	<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspBootstap Form</h1>	
+<div class="form-inline">
+	<input type="text" class="form-control" id="FName" placeholder="First Name">
+&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input type="text" class="form-control" id="LName" placeholder="Last Name">
+</div><br>
+
+<div class="form-group" style="width: 420px;">
+	<input type="text" class="form-control" id="DName" placeholder="User Name">
+</div>
+
+<div class="form-inline">
+	<input type="password" class="form-control" id="pwd" placeholder="Password">
+&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input type="password" class="form-control" id="cpwd" placeholder="Confirm Password">
+</div><br>
+
+<button type="submit" class="btn btn">I Agree</button>
+
+<div class="info">
+<p>By clicking <button class="btn btn-primary btn-xs">Register</button> you agree to the <a href="">Terms and Consition</a> set out by this site, including our Cookie Use</p>
+</div>
+
+<div class="line">
+<hr class="colored">
+</div>
+
+<button type="submit" class="btn btn-primary" style="width: 197px;">Register</button>
+&nbsp&nbsp&nbsp&nbsp&nbsp
+<button type="submit" class="btn btn-success" style="width: 197px;">Sign In</button>
+
+</form>
+</div>
+</body>
+</html>
